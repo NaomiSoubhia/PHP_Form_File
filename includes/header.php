@@ -11,6 +11,6 @@
 </head>
 
 <body>
-    <header>
+    <header class="container mt-4">
         <h1>Naomi Soubhia Doi - 200645137</h1>
     </header>
