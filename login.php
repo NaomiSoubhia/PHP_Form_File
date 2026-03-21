@@ -6,6 +6,8 @@ require "includes/connect.php";
 //Header
 require "includes/header.php";
 
+
+
 //Collect errors
 $error = "";
 
@@ -36,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['username'] = $user['username'];
 
             //If it is right, go to the form page
-            header("Location: form.php");
+            header("Location: admin.php");
             exit;
         } else {
             $error = "Invalid credentials. Please try again.";
