@@ -11,7 +11,7 @@ require "includes/header_admin.php";
 //Get user ID
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
+    header("Location: index.php");
     exit();
 }
 $userId = $_SESSION['user_id']; 
@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     //save the relative path to the database
                     $imagePath = 'uploads/' . $safeFilename; 
                 } else {
-                    $errors[] = "Image uploaded failed!"; 
+                    $errors[] = "Failed to move uploaded file.";
                 }
             }
         }
@@ -111,6 +111,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             accept=".jpg,.jpeg,.png,.webp">
 
         <button type="submit" class="btn btn-primary">Add Photo</button>
+        <a href="admin.php" class="btn btn-secondary">Admin</a>
     </form>
 </main>
 

@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 // Make sure the user is logged in before they can access this page
 require "includes/auth.php";
@@ -10,7 +9,7 @@ require "includes/connect.php";
 // Get user ID
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
+    header("Location: index.php");
     exit();
 }
 $userId = $_SESSION['user_id']; 
@@ -32,13 +31,14 @@ $photo = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
  
 <div class="ms-5 ">
+  <a href="form.php" class="btn btn-secondary d-block m-2" style="width:150px;">Upload photo</a>
   <?php if (!empty($photo['image_path'])): ?>
     <img src="<?= htmlspecialchars($photo['image_path']); ?>" class="rounded w-50 d-block" alt="Profile Image">
    
     <?php else: ?>
     <p>No image found</p>
   <?php endif; ?>
-   <a href="form.php" class="btn btn-secondary d-block m-2" style="width:150px;">Upload photo</a>
+   
 </div>
 
 
